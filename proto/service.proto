@@ -1,2 +1,15 @@
 syntax = "proto3";
 
+option go_package = "user/api";
+message Request{
+    int64 a = 1;
+    int64 b = 2;
+
+}
+message Response{
+    int64 result = 1;
+}
+service AddService{
+    rpc Add(Request) returns (Response);
+    rpc Multifly(Request) returns (Response);
+}
